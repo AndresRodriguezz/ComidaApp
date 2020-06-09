@@ -22,10 +22,93 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="220dp"
-                android:background="@color/colorPrimaryDark"/>
+                android:background="@color/colorPrimary"/>
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="30sp"
+                android:text="Family Food"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="20dp"
+                android:textColor="@color/colorWhite"/>
+
+            <androidx.cardview.widget.CardView
+                android:layout_below="@id/title"
+                android:id="@+id/cardSearch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="15dp"
+                app:cardBackgroundColor="@color/colorPrimaryDark"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="0dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:padding="10dp"
+                    android:text="Search your recipe..."
+                    android:textColor="@color/colorPrimaryLight"
+                    android:gravity="center_vertical"
+                    android:drawableLeft="@drawable/ic_search_primary_light"
+                    android:drawablePadding="10dp"
+                    />
+            </androidx.cardview.widget.CardView>
 
 
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/viewPagerHeader"
+                android:foregroundGravity="center"
+                android:overScrollMode="never"
+                android:clipToPadding="false"
+                android:layout_below="@id/cardSearch"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"/>
+            <include android:id="id/ShimmerMeal"
+                layout="@layout/item_view_pager_header_shimmer"/>
 
+            <TextView
+                android:id="@+id/titleCategory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/viewPagerHeader"
+                android:text="@string/meal_categories"
+                android:textSize="19sp"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="bold"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="10dp"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerCategory"
+                android:scrollbars="none"
+                android:layout_marginTop="10dp"
+                android:layout_below="@id/titleCategory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="50dp"/>
+            <include android:id="@+id/shimmerCategory"
+                layout="@layout/item_recycler_category_shimmer"/>
+
+
+            <TextView
+                android:padding="10dp"
+                android:gravity="center"
+                android:textColor="@color/colorWhite"
+                android:text="@string/app_name"
+                android:background="@color/colorPrimaryLight"
+                android:layout_alignParentBottom="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"/>
+            
         </RelativeLayout>
 
     </androidx.core.widget.NestedScrollView>
