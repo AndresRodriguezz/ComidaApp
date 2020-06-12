@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".view.home.MainActivity">
 
     <androidx.core.widget.NestedScrollView
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
@@ -88,6 +88,7 @@
                 android:id="@+id/recyclerCategory"
                 android:scrollbars="none"
                 android:layout_marginTop="10dp"
+                android:clipToPadding="false"
                 android:layout_below="@id/titleCategory"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
